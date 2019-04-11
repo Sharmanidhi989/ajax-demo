@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<table id="article">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @articles.each do |article|%>
+    <tr>
+      <td><%#= article.title %><% myvar = article.title %><%= link_to myvar, article %></td>
+      <td><%= article.body %></td>
+      <td><%#= link_to 'Show', article %></td>
+      <td><%#= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%#= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <td></td>
+    </tr>
+    <%end%>
+  
+</table>
+
+<br>
+
+
+<div id="new-article">
+  <%= link_to 'New Article', new_article_path, remote: true %>
+</div>
+
